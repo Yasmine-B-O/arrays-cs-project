@@ -2,16 +2,23 @@ package samplearrays;
 
 public class BankAccount {
 
-    String name;
-    double currentBalance;
+    private String name;
+    private double currentBalance;
     //TO-DO: Initialize an Array with 1000 in size that stores Double called 'transactions' to keep track of the user's transactions
-
+    public static int [] transactions=new int[1000];
     public BankAccount(String name, int startingBalance){
-
+           this.name=name;
+           this.currentBalance=startingBalance;
     }
 
     public void deposit(double amount){
+         if(amount>0){
+            this.currentBalance+=amount;
 
+         }
+         else{
+
+         }
     }
 
     public void withdraw(double amount){
