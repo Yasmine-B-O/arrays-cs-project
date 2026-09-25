@@ -4,26 +4,48 @@ import java.util.Arrays;
 import java.util.Comparator;
 
 public class ManageStudent {
-
     // 2) Find the Oldest Student
     public static Student findOldest(Student[] students) {
-
+        Student oldest=students[0];
+        for(int i=1;i< students.length;i++){
+            if (students[i].getAge()>oldest.getAge()){
+                oldest=students[i];
+            }
+        }
         return oldest;
     }
 
     // 3) Count Adult Students (age >= 18)
     public static int countAdults(Student[] students) {
-
+        int count=0;
+        for(int i=1;i< students.length;i++){
+            if (students[i].isAdult()){
+                count++;
+            }
+        }
+        return count;
     }
 
     // 4) Average Grade (returns NaN if no students or grades)
     public static double averageGrade(Student[] students) {
-
+         double avg=0;
+         for(Student student:students){
+             avg+=student.getGrade();
+         }
+         if(students.length==0){
+             return 0;
+         }
+         return avg/students.length;
     }
 
     // 5) Search by Name (case-sensitive; change to equalsIgnoreCase if desired)
     public static Student findStudentByName(Student[] students, String name) {
-
+         for (Student  student: students){
+             if(student.getName()==name){
+                 return student;
+             }
+         }
+         return null;
     }
 
     // 6) Sort Students by Grade (descending)
@@ -33,17 +55,34 @@ public class ManageStudent {
 
     // 7) Print High Achievers (grade >= 15)
     public static void printHighAchievers(Student[] students) {
-
+        for(Student student :students){
+            if(student.getGrade()>=15){
+                System.out.println(student.toString());
+            }
+        }
     }
 
     // 8) Update Student Grade by id
     public static boolean updateGrade(Student[] students, int id, int newGrade) {
-
+          for(Student student :students){
+              if(student.getId()==id){
+                  student.setGrade(newGrade);
+                  return true;
+              }
+          }
+          return false;
     }
 
     // 9) Find Duplicate Names
     public static boolean hasDuplicateNames(Student[] students) {
-
+         for(int i=0;i<students.length;i++){
+             for(int j=i+1;j< students.length;j++){
+                 if(students[i].getName()==students[j].getName()){
+                     return true;
+                 }
+             }
+         }
+         return false;
     }
 
     // 10) Expandable Array: return a new array with one more slot and append student
