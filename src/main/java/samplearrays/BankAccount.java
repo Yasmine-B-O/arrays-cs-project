@@ -2,7 +2,7 @@ package samplearrays;
 import java.util.Arrays;
 public class BankAccount {
     private int num_transaction =0;
-    private String name;
+    private final String name;
     private double currentBalance;
     //TO-DO: Initialize an Array with 1000 in size that stores Double called 'transactions' to keep track of the user's transactions
     public static double [] transactions=new double[1000];
