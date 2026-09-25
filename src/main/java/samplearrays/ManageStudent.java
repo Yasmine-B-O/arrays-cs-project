@@ -50,7 +50,7 @@ public class ManageStudent {
 
     // 6) Sort Students by Grade (descending)
     public static void sortByGradeDesc(Student[] students) {
-
+        Arrays.sort(students, Comparator.comparingDouble(Student::getGrade).reversed());
     }
 
     // 7) Print High Achievers (grade >= 15)
@@ -87,13 +87,17 @@ public class ManageStudent {
 
     // 10) Expandable Array: return a new array with one more slot and append student
     public static Student[] appendStudent(Student[] students, Student newStudent) {
+        Student[] new_arr=new Student [students.length];
+        System.arraycopy(students,0,new_arr,0,students.length);
+        new_arr[students.length]=newStudent;
+        return new_arr;
 
     }
 
     // 1) Create an Array of Students + demos for all tasks
     public static void main(String[] args) {
         // Create & initialize array of 5 students
-
+         Student []arr={new Student(1,"Hiba",16,18),new Student(2,"Ritaj",18,19),new Student(3,"Hayat",17,17),new Student(4,"Khalid",18,14),new Student(5,"Sadik",18,15)};
 
         // Print all
         System.out.println("== All Students ==");
