@@ -106,18 +106,19 @@ public class ManageStudent {
 
         // 2) Oldest
 
-
+        System.out.println("The oldest is "+findOldest(arr).toString());
         // 3) Count adults
 
-
+        System.out.println("Number of adults students is "+countAdults(arr));
         // 4) Average grade
-
+        System.out.println("The average grade is "+averageGrade(arr));
 
         // 5) Find by name
 
-
+        System.out.println("The student names Ritaj is "+findStudentByName(arr,"Hiba"));
         // 6) Sort by grade desc
         // sort function
+        sortByGradeDesc(arr);
         System.out.println("\n== Sorted by grade (desc) ==");
         for (Student s : arr) System.out.println(s);
 
@@ -126,15 +127,15 @@ public class ManageStudent {
         printHighAchievers(arr);
 
         // 8) Update grade by id
+        boolean updated=updateGrade(arr,4,12);
         // function
         System.out.println("\nUpdated id=4? " + updated);
         System.out.println(findStudentByName(arr, "Dina"));
 
         // 9) Duplicate names
-
-
+        System.out.println("\nThe array has duplicates names ? "+hasDuplicateNames(arr));
         // 10) Append new student
-
+        Student [] new_arr=appendStudent(arr,new Student(6,"Rita",18,13));
     }
 }
 

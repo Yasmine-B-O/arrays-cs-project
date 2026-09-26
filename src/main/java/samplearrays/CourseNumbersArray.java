@@ -11,6 +11,13 @@ public class CourseNumbersArray {
          */
         updatedCourses[registeredCourses.length]=newCourse;
         System.out.println("updatedCourses : "+Arrays.toString(updatedCourses));
+        boolean flag=false;
+        for(int num:updatedCourses){
+            if(num==1270){
+               flag=true;
+            }
+        }
+        System.out.println("\nDoes the updated array contain the course number 1270 ? "+flag);
 
     }
 }
