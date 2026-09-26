@@ -41,7 +41,7 @@ public class ManageStudent {
     // 5) Search by Name (case-sensitive; change to equalsIgnoreCase if desired)
     public static Student findStudentByName(Student[] students, String name) {
          for (Student  student: students){
-             if(student.getName()==name){
+             if(student.getName().equals(name)){
                  return student;
              }
          }
@@ -77,7 +77,7 @@ public class ManageStudent {
     public static boolean hasDuplicateNames(Student[] students) {
          for(int i=0;i<students.length;i++){
              for(int j=i+1;j< students.length;j++){
-                 if(students[i].getName()==students[j].getName()){
+                 if(students[i].getName().equals(students[j].getName())){
                      return true;
                  }
              }
@@ -87,7 +87,7 @@ public class ManageStudent {
 
     // 10) Expandable Array: return a new array with one more slot and append student
     public static Student[] appendStudent(Student[] students, Student newStudent) {
-        Student[] new_arr=new Student [students.length];
+        Student[] new_arr=new Student [students.length+1];
         System.arraycopy(students,0,new_arr,0,students.length);
         new_arr[students.length]=newStudent;
         return new_arr;
@@ -106,7 +106,7 @@ public class ManageStudent {
 
         // 2) Oldest
 
-        System.out.println("The oldest is "+findOldest(arr).toString());
+        System.out.println("The student is "+findOldest(arr).toString());
         // 3) Count adults
 
         System.out.println("Number of adults students is "+countAdults(arr));
@@ -115,7 +115,7 @@ public class ManageStudent {
 
         // 5) Find by name
 
-        System.out.println("The student names Ritaj is "+findStudentByName(arr,"Hiba"));
+        System.out.println("The student named Ritaj is "+findStudentByName(arr,"Ritaj"));
         // 6) Sort by grade desc
         // sort function
         sortByGradeDesc(arr);
@@ -136,6 +136,7 @@ public class ManageStudent {
         System.out.println("\nThe array has duplicates names ? "+hasDuplicateNames(arr));
         // 10) Append new student
         Student [] new_arr=appendStudent(arr,new Student(6,"Rita",18,13));
+        System.out.println("The new array is "+Arrays.toString(new_arr));
     }
 }
 

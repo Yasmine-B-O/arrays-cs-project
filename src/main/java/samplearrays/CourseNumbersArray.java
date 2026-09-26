@@ -6,6 +6,7 @@ public class CourseNumbersArray {
         int newCourse=1270;
         int[] updatedCourses= new int [registeredCourses.length +1];
         System.arraycopy(registeredCourses,0,updatedCourses,0,registeredCourses.length);
+
         /*System.arraycopy(sourceArray, sourceStartIndex,
          destinationArray, destinationStartIndex, lengthToCopy);
          */
