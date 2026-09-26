@@ -57,7 +57,7 @@ public class ManageStudent {
     public static void printHighAchievers(Student[] students) {
         for(Student student :students){
             if(student.getGrade()>=15){
-                System.out.println(student.toString());
+                System.out.println(student);
             }
         }
     }
@@ -142,7 +142,7 @@ public class ManageStudent {
         for(int i=0;i<school.length;i++){
             System.out.println("\nClass "+(i+1));
             for(Student ele:school[i]){
-                System.out.println(ele.toString());
+                System.out.println(ele);//println calls tostring automatically
             }
         }
     }
