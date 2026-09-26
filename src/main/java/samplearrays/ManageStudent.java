@@ -137,6 +137,14 @@ public class ManageStudent {
         // 10) Append new student
         Student [] new_arr=appendStudent(arr,new Student(6,"Rita",18,13));
         System.out.println("The new array is "+Arrays.toString(new_arr));
+
+        Student [][] school={{new Student(1,"Hiba",16,18),new Student(2,"Ritaj",18,19),new Student(3,"Hayat",17,17)},{new Student(4,"Khalid",18,14),new Student(5,"Sadik",18,15),new Student(6,"Rita",18,13)}};
+        for(int i=0;i<school.length;i++){
+            System.out.println("\nClass "+(i+1));
+            for(Student ele:school[i]){
+                System.out.println(ele.toString());
+            }
+        }
     }
 }
 
